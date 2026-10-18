@@ -17,9 +17,8 @@ stages {
 stage('Run tests') {
     steps {
         script {
-            env.Docker_BUILDKIT=1
-            sh 'docker run --rm -e CI=true amr/docker-react npm test'
+            env.DOCKER_BUILDKIT = 1
+            sh 'docker run -e CI=true amr/docker-react npm test'
         }
     }
 }
-
