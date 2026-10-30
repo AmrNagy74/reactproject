@@ -15,15 +15,15 @@ jobs:
       - run: docker build -t amrnagy74/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true amrnagy74/react-test npm run test
       
-      - run : docker build -t amr/multi-client ./microservices/client
-      - run : docker build -t amr/multi-nginx ./microservices/nginx
-      - run : docker build -t amr/multi-server ./microservices/server
-      - run : docker build -t amr/multi-worker ./microservices/worker
-    
-      - run : docker push amr/multi-client
-      - run : docker push amr/multi-nginx
-      - run : docker push amr/multi-server
-      - run : docker push amr/multi-worker
+      - run: docker build -t amrnagy74/multi-client ./microservices/client
+      - run: docker build -t amrnagy74/multi-nginx ./microservices/nginx
+      - run: docker build -t amrnagy74/multi-server ./microservices/server
+      - run: docker build -t amrnagy74/multi-worker ./microservices/worker
+  
+      - run: docker push amrnagy74/multi-client
+      - run: docker push amrnagy74/multi-nginx
+      - run: docker push amrnagy74/multi-server
+      - run: docker push amrnagy74/multi-worker
 
       #- name: Generate deployment package
       #  run: zip -r deploy.zip . -x '*.git*'
